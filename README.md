@@ -1,13 +1,13 @@
 # PHP: The Right Way In Hebrew
 
-## Overview
+## סקירה כללית
 
-This is the GitHub Pages repository for the _PHP: The Right Way_ project.
+זהו מאגר דפי GitHub המשמשים עבור הפרויקט _PHP: The Right Way_.
 
-* This website is a Jekyll project.
-* Each section and sub-section are a Markdown file in `_posts/`.
-* Sub-sections have `isChild: true` in their front matter.
-* The navigation and page structure are automatically generated.
+* אתר זה הוא תוצר של Jekyll.
+* כל סעיף ותת סעיף באתר מיוצגים ע"י קובץ תחת תיקיית `_posts/`.
+* הסימון של תתי סעיפים ב- `isChild: true` בתחילתם חשוב.
+* מבנה הדף והניווט נוצרים באופן אוטומטי.
 
 ## Spread the Word!
 
