@@ -1,4 +1,4 @@
-# PHP: The Right Way
+# PHP: The Right Way In Hebrew
 
 ## Overview
 
