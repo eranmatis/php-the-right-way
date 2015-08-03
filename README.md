@@ -9,27 +9,26 @@
 * הסימון של תתי סעיפים ב- `isChild: true` בתחילתם חשוב.
 * מבנה הדף והניווט נוצרים באופן אוטומטי.
 
-## Spread the Word!
+## הפיצו את השמועה!
 
-_PHP: The Right Way_ has web banner images you can use on your website. Show your support, and let new PHP
-developers know where to find good information!
+פרויקט _PHP: The Right Way_ מכיל תמונות באנר לשימוש באתר שלך. הפגן את תמיכתך ואפשר למפתחי PHP חדשים למצוא מידע טוב בנושא!
 
-[See Banner Images](http://www.phptherightway.com/banners.html)
+[לצפיה בבאנרים](http://www.phptherightway.com/banners.html)
 
-## How to Contribute
+## כיצד ניתן לתרום
 
-1. Fork and edit
-2. Optionally install [Ruby](https://rvm.io/rvm/install/) with [Jekyll](https://github.com/mojombo/jekyll/) gem to preview locally
-3. Submit pull request for consideration
+1. פצל את הפרויקט והוסף את העדכונים שלך
+2. ניתן אף להתקין [Ruby](https://rvm.io/rvm/install/) יחד עם [Jekyll](https://github.com/mojombo/jekyll/) כדי לעבוד על המחשב שלכם.
+3. הגישו בקשות עדכון לסקירה
 
-### Contributor Style Guide
+### מדריך עיצוב לתורם
 
-1. Use American English spelling (*primary English repo only*)
-2. Use four (4) spaces to indent text; do not use tabs.
-3. Wrap all text to 120 characters.
-4. Code samples should adhere to PSR-1 or higher.
+1. אנא שמור על איות בשפה האנגלית - ניב אמריקאי (*מאגר ראשי בלבד*)
+2. השתמש ב-4 תווי רווח להזחה; לא להשתמש ב-Tab.
+3. דאג שמעטפת הטקסט מגיעה ל-120 תווים.
+4. דוגמאות קוד צריכות להתאים לתקן PSR-1 ומעלה.
 
-## Where
+## היכן
 
 <http://www.phptherightway.com>
 
@@ -54,35 +53,37 @@ developers know where to find good information!
 * [Thai](https://apzentral.github.io/php-the-right-way/)
 * [Turkish](http://hkulekci.github.io/php-the-right-way/)
 * [Ukrainian](http://iflista.github.com/php-the-right-way)
+* [עברית](http://eranmatis.github.io/php-the-right-way-in-hebrew)
 
-### Translations
+### תרגומים
 
-If you are interested in translating _PHP: The Right Way_, fork this repo on GitHub and publish your localized fork to your own GitHub Pages account. We'll link to your translation from the primary document.
+אם אתה מעוניין לתרגם את  _PHP: The Right Way_, פצל את הפרויקט ב-GitHub ופרסם את הפרויקט המתורגם בדפי הפרויקט תחת חשבונך. אנחנו נדאג לקשר את התרגום שלך מהמסמך המקורי.
 
-To avoid fragmentation and reader confusion, please choose one of these options:
 
-1. We link to your GitHub Pages fork with `[username].github.io/php-the-right-way`
-2. We link to your GitHub Pages fork with a subdomain (e.g. "ru.phptherightway.com")
+כדי למנוע בלבול הקורא ופיצול של הפרויקט, בחר באחת מהאפשרויות אלה:
 
-If you use a subdomain, enter the subdomain into the `CNAME` file, and ask us to setup DNS for you. If you do not use a subdomain, remove the `CNAME` file entirely else your fork will not build when pushed.
+1. אנו מקשרים לפיצול דפי ה-GitHub שלך: `[username].github.io/php-the-right-way`
+2. אנו מקשרים לפיצול דפי ה-GitHub שלך דרך תת דומיין (לדוגמא: "il.phptherightway.co.il")
 
-Add information about your translation in the [wiki page](https://github.com/codeguy/php-the-right-way/wiki/Translations).
+אם אתה מעלה את התרגום בתת דומיין, אנא הוסף את תת הדומיין לתוך קובץ ה-`CNAME` ובקש מאתנו להגדיר את רשומת ה-DNS עבורך. אם לא מבוצע שימוש בתת דומיין, יש להסיר את קובץ ה-`CNAME` אחרת הפיצול לא ייבנה לאחר push.
 
-When your translation is ready, open an issue on the Issue Tracker to let us know.
+הוסף מידע אודות התרגום שלך Add information about your translation in the [בדף ה-wiki](https://github.com/codeguy/php-the-right-way/wiki/Translations).
 
-## Why
+כאשר התרגום שלך יהיה מוכן, פתח פניה במערכת מעקב הפניות כדי שנדע על כך.
 
-There's been a lot of discussion lately about how the PHP community lacks sufficient, credible information for programmers new to PHP. This repository aims to solve this problem.
+## למה לטרוח ?
 
-## Who
+לאחרונה היו דיונים רבים על המחסור במקורות מידע אמינים למפתחי PHP. מאגר מידע זה נוצר על מנת לסייע בפתרון הבעיה.
 
-My name is [Josh Lockhart](http://twitter.com/codeguy). I'm the author of the [Slim Framework](http://www.slimframework.com/), and I work for [New Media Campaigns](http://www.newmediacampaigns.com/).
+## מי אני
 
-### Collaborators
+שמי הוא [ג'ון לוקהארט](http://twitter.com/codeguy). אני המחבר של  [Slim Framework](http://www.slimframework.com/), ואני עובד בחברת [New Media Campaigns](http://www.newmediacampaigns.com/).
 
-* [Kris Jordan](http://krisjordan.com/)
-* [Phil Sturgeon](http://philsturgeon.co.uk/)
+### משתפי פעולה
 
-## License
+* [כריס ג'ורדן](http://krisjordan.com/)
+* [פיל סטורג'ן](http://philsturgeon.co.uk/)
+
+## רישיון
 
 [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)
