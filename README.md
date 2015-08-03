@@ -53,7 +53,7 @@
 * [Thai](https://apzentral.github.io/php-the-right-way/)
 * [Turkish](http://hkulekci.github.io/php-the-right-way/)
 * [Ukrainian](http://iflista.github.com/php-the-right-way)
-* [עברית](http://eranmatis.github.io/php-the-right-way-in-hebrew)
+* [עברית](http://eranmatis.github.io/php-the-right-way)
 
 ### תרגומים
 
