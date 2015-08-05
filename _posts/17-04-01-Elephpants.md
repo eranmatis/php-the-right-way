@@ -12,8 +12,6 @@ anchor:  elephpants
 נכון להיוים, elePHPants נמצאים בכנסי PHP רבים ומוצגים במחשבים של מפתחי PHP רבים, לשעשוע והשראה.
 [לראיון עם וינסנט פונטייר][vincent-pontier-interview]
 
-
-
 [elephpant]: http://php.net/elephpant.php
 [vincent-pontier-interview]: http://7php.com/elephpant/
 [vincent-pontier]: http://www.elroubio.net/
