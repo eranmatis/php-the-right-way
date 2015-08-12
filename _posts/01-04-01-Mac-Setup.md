@@ -3,12 +3,12 @@ isChild: true
 anchor:  mac_setup
 ---
 
-## Mac Setup {#mac_setup_title}
+## התקנת Mac {#mac_setup_title}
 
-OS X comes prepackaged with PHP but it is normally a little behind the latest stable. Mountain Lion has 5.3.10,
-Mavericks has 5.4.17 and Yosemite has 5.5.9, but with PHP 5.6 out that is often not good enough.
+מערכות ההפעלה OS X מכילות בתוכן PHPת אך בדרך כלל לא עם הגרסה המעודכנת ביותר. גרסת Mountain Lion מכילה PHP 5.3.10,
+גרסת Mavericks מכילה PHP 5.4.17 וגרסת Yosemite מכילה PHP 5.5.9, אבל לעיתים גרסאות אלו אינן מספיקות לעומת PHP 5.6.
 
-There are multiple ways to install PHP on OS X.
+קיימות דרכים רבות להתקין PHP על OS X.
 
 ### Install PHP via Homebrew
 
