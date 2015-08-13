@@ -2,16 +2,15 @@
 anchor: community
 ---
 
-# Community {#community_title}
+# קהילה {#community_title}
 
-The PHP community is as diverse as it is large, and its members are ready and willing to support new PHP programmers.
-Consider joining your local PHP user group (PUG) or attending larger PHP conferences to learn more about the best
-practices shown here. You can hang out on IRC in the #phpc channel on [irc.freenode.com][php-irc] and follow the
-[@phpc][phpc-twitter] twitter account. Get out there, meet new developers, learn new topics, and above all, make new
-friends! Other community resources include the Google+ PHP [Programmer community][php-programmers-gplus] and
-[StackOverflow][php-so].
+קהילת ה-PHP היא קהילה גדולה ומגוונתת חברי הקהילה רוצים ומוכנים לספק תמיכה למפתחי PHP חדשים.
+שקלו לחבור לקבוצת משתמשי ה-PHP המקומית (PUG) או להשתתף בכנסי PHP גדולים על מנת ללמוד עוד שיטות טובות כגון 
+אלו המובאות כאן. ניתן להיות בקשר באמצעות IRC בערוץ #phpc שב- [irc.freenode.com][php-irc] ולעקוב אחר חשבון
+הטוויטר [@phpc][phpc-twitter]. צא לעולם, פגוש מפתחים חדשים, למד נושאים חדשים ומעל לכל - רכוש חברים חדשים!
 
-[Read the Official PHP Events Calendar][php-calendar]
+משאבי קהילה אחרים כוללים את Google+ PHP [קהילת המפתחים][php-programmers-gplus] ואת [StackOverflow][php-so].
+[עיין בלוח השנה הרשמי של אירועי PHP][php-calendar]
 
 
 [php-irc]: http://webchat.freenode.net/?channels=phpc
