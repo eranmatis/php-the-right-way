@@ -10,55 +10,52 @@ anchor:  mac_setup
 
 קיימות דרכים רבות להתקין PHP על OS X.
 
-### Install PHP via Homebrew
+### התקנת PHP באמצעות Homebrew
 
-[Homebrew] is a powerful package manager for OS X, which can help you install PHP and various extensions easily.
-[Homebrew PHP] is a repository that contains PHP-related "formulae" for Homebrew, and will let you install PHP.
+[Homebrew] הוא מנהל התקנים חזק בשימוש מערכת ההפעלה OS X, באמצעותו ניתן להתקין PHP ותוספים נוספים בקלות.
+[Homebrew PHP] הוא מאגר המכיל "מתכונים" הקשורים ל-PHP עבור Homebrew ויאפשר גם התקנת PHP.
 
-At this point, you can install `php53`, `php54`, `php55` or `php56` using the `brew install` command, and switch
-between them by modifying your `PATH` variable. Alternatively you can use [brew-php-switcher][brew-php-switcher] which will switch automatically for you.
+נכון לעכשיו, ניתן להתקין `php53`, `php54`, `php55` או `php56` באמצעות פקודת `brew install` ולהחליף ביניהם 
+באמצעות עדכון של משתנה ה-`PATH` שבתחנת העבודה שלך.
+לחילופין, ניתן להשתמש ב- [brew-php-switcher][brew-php-switcher] שיבצע את ההחלפה באופן אוטומטי עבורך..
 
-### Install PHP via Macports
+### התקנת PHP באמצעות Macports
 
-The [MacPorts] Project is an open-source community initiative to design an
-easy-to-use system for compiling, installing, and upgrading either
-command-line, X11 or Aqua based open-source software on the OS X operating
-system.
+פרויקט ה-[MacPorts] הוא יוזמה של קהילת קוד מקור פתוח לעצב מערכת פשוטה להידור (קומפילצייה), התקנה ושדרוג
+באמצעות ממשק שורת הפקודה, X11 או תכנת קוד מקור פתוח מבוססת Aqua על גבי מערכת ההפעלה OS X.
 
-MacPorts supports pre-compiled binaries, so you don't need to recompile every
-dependencies from the source tarball files, it saves your life if you don't
-have any package installed on your system.
+MacPorts תומכת בקבצים בינאריים מהודרים כך שאין צורך להדר מחדש כל תלות
+מקבצי מקור דחוסים, וממש מצילת חיים במקרים בהם לא מותקנת אף חבילה במערכת שלך.
 
-At this point, you can install `php53`, `php54`, `php55` or `php56` using the `port install` command, for example:
+נכון לעכשיו, ניתן להתקין `php53`, `php54`, `php55` או `php56` באמצעות פקודת `port install`, לדוגמא:
 
     sudo port install php54
     sudo port install php55
 
-And you can run `select` command to switch your active php:
+ניתן להריץ את פקודת ה- `select` על מנת להחליף בין סביבת ה-PHP הפעילה:
 
     sudo port select --set php php55
 
-### Install PHP via phpbrew
+### התקנת PHP באמצעות phpbrew
 
-[phpbrew] is a tool for installing and managing multiple PHP versions. This can be really useful if two different
-applications/projects require different versions of PHP, and you are not using virtual machines.
+[phpbrew] כלי להתקנת וניהול גרסאות מרובות של PHP. כלי זה שימושי מאוד במצבים בהם שתי מערכות או מוצרים דורשות
+גרסאות שונות של PHP ובמידה שלא נעשה שימוש במכונות וירטואליות.
 
-### Install PHP via Liip's binary installer
-Another popular option is [php-osx.liip.ch] which provides one liner installation methods for versions 5.3 through 5.6.
-It doesn't overwrite the php binaries installed by Apple, but installs everything in a separate location (/usr/local/php5).
+### התקנת PHP באמצעות התקנה בינארית של Liip
+אפשרות נפוצה נוספת היא [php-osx.liip.ch] המספקת דרכי התקנה רציפות עבור גרסאות PHP 5.3 ועד 5.6.
+ההתקנה מתבצעת במיקום נפרד (/usr/local/php5), כך שאין שכתוב של קבצי ה-PHP המוקתנים ע"י Apple.
 
-### Compile from Source
+### הידור מהמקור
 
-Another option that gives you control over the version of PHP you install, is to [compile it yourself][mac-compile].
-In that case be sure to have installed either [Xcode][xcode-gcc-substitution] or Apple's substitute
-["Command Line Tools for XCode"] downloadable from Apple's Mac Developer Center.
+שיטה נוספת המעניקה שליטה על גרסת ה-PHP המותקנת היא שעטת [הדר זאת בעצמך][mac-compile].
+אם נעשה שימוש בשיטה זו, יש לוודא שכבר התקנו [Xcode][xcode-gcc-substitution] או תחליף אחר של חברת Apple
+["כלים לשורת הפקודה עבור XCode"] הניתנים להורדה מאתר מרכז הפיתוח של Apple's Mac.
 
-### All-in-One Installers
+### התקנות משולבות (הכל כלול)
 
-The solutions listed above mainly handle PHP itself, and do not supply things like Apache, Nginx or a SQL server.
-"All-in-one" solutions such as [MAMP][mamp-downloads] and [XAMPP][xampp] will install these other bits of software for
-you and tie them all together, but ease of setup comes with a trade-off of flexibility.
-
+הפתרונות הקודמים מטפלים בעיקר ב-PHP עצמו אך אינם מספקים כלים כמו Apache, Nginx או SQL server.
+פתרונות "הכל כלול" כגון: [MAMP][mamp-downloads] ו/או [XAMPP][xampp] יתקינו את הכלים הנוספים הנדרשים גם כן
+ויגדירו את הקשרים ביניהם באופן אוטומטי. אך לפשטות ההתקנה יש מחיר של גמישות היישום.
 
 [Homebrew]: http://brew.sh/
 [Homebrew PHP]: https://github.com/Homebrew/homebrew-php#installation
