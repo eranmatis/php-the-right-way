@@ -3,31 +3,29 @@ isChild: true
 anchor:  complex_problem
 ---
 
-## Complex Problem {#complex_problem_title}
+## בעיות מורכבות {#complex_problem_title}
 
-If you have ever read about Dependency Injection then you have probably seen the terms *"Inversion of Control"* or
-*"Dependency Inversion Principle"*. These are the complex problems that Dependency Injection solves.
+אם אי פעם קראתם על הזרקת תלויות, נתקלתם לוודאי במונחים *"היפוך שליטה"* או *"עקרון היפוך תלויות"*. 
+אלו הן הבעיות המורכבות אשר נפתרות באמצעות הזרקת תלויות.
 
-### Inversion of Control
+### היפוך שליטה
 
-Inversion of Control is as it says, "inverting the control" of a system by keeping organisational control entirely
-separate from our objects. In terms of Dependency Injection, this means loosening our dependencies by controlling and
-instantiating them elsewhere in the system.
+היפוך שליטה הוא כפי שנכתב, "הפיכה של שליטה" של מערכת באמצעות ניתוק מוחלט של ניהול הסדר מניהול האובייקטים.
+במונחים של הזרקת תלויות, הכוונה היא החלשת התלויות באמצעות שליטה ויצירת מופעים שלהם במיקום אחר במערכת.
 
-For years, PHP frameworks have been achieving Inversion of Control, however, the question became, which part of control
-are you inverting, and where to? For example, MVC frameworks would generally provide a super object or base controller
-that other controllers must extend to gain access to its dependencies. This **is** Inversion of Control, however,
-instead of loosening dependencies, this method simply moved them.
+במשך שנים, מערכות PHP מיישמות היפוך שליטה, אך השאלה הנשאלת היא, איזה חלק של שליטה אנו הופכים ולאן?
+לדוגמא, מערכות MVC בדרך כלל מגדירות "סופר עצם/אובייקט" או לוגיקה בסיסית אשר לוגיקות אחרות חייבות לרשת על מנת
+לקבל גישה לתלויות שלהן. זוהי **ה**הגדרה של היפוך שליטה. עם זאת, במקום להחליש תלויות, שיטה זו פשוט מעבירה אותן
+למקום אחר.
 
-Dependency Injection allows us to more elegantly solve this problem by only injecting the dependencies we need, when we
-need them, without the need for any hard coded dependencies at all.
+הזרקת תלויות מאפשרת לנו פתרון אלגנטי יותר לבעיה כך שאנו מזריקים רק את התלויות הנדרשות לנו, מתי שהן נדרשות לנו,
+ללא צורך להגדרת תלויות קשיחות כלל.
 
-### Dependency Inversion Principle
+### עקרון היפוך תלויות
 
-Dependency Inversion Principle is the "D" in the S.O.L.I.D set of object oriented design principles that states one
-should *"Depend on Abstractions. Do not depend on concretions."*. Put simply, this means our dependencies should be
-interfaces/contracts or abstract classes rather than concrete implementations. We can easily refactor the above example
-to follow this principle.
+עקרון היפוך תלויות מהווה את ה- "D" בראשי התיבות S.O.L.I.D מכלול עקרונות בעיצוב מונחה עצמים המנחה אותנו כך: 
+*"סמכו על הפשטות, אל תסמכו על הקשחות"*. בפשטות, הכוונה היא שיש להגדר תלויות כממשקים/חוזים או מחלקות מופשטות
+ולא במימוש קשיח. ניתן לשנות את קוד הדוגמא הקודמת כך שתמלא אחר עקרון זה.
 
 {% highlight php %}
 <?php
@@ -48,14 +46,13 @@ interface AdapterInterface {}
 class MysqlAdapter implements AdapterInterface {}
 {% endhighlight %}
 
-There are several benefits to the `Database` class now depending on an interface rather than a concretion.
+ישנם יתרונות ברורים למחלקת `Database` שכעת תלויה בממשק ולא במחלקה קשיחה.
 
-Consider that you are working in a team and the adapter is being worked on by a colleague. In our first example, we
-would have to wait for said colleague to finish the adapter before we could properly mock it for our unit tests. Now
-that the dependency is an interface/contract we can happily mock that interface knowing that our colleague will build
-the adapter based on that contract.
+חשבו על סיטואצייה שבה אתם עובדים בצוות והמתאם נמצא בעבודה של חבר צוות אחר. בדוגמה הראשונה שלנו, היינו נאלצים 
+להמתין לחבר הצוות הנ"ל עד שיסיים את עבודתו על המתאם לפני שהיינו יכולים לחקות את המימוש עבור יחידת הבדיקות שלנו.
+כעת, שהתלות נמצאת בממשק/חוזהת אנו יכולים לחקות אותו בשמחה תוך ידיעה שחבר הצוות שלנו שבונה את המתאם יתבסס על
+אותו החוזה שקבענו קודם.
 
-An even bigger benefit to this method is that our code is now much more scalable. If a year down the line we decide
-that we want to migrate to a different type of database, we can write an adapter that implements the original interface
-and inject that instead, no more refactoring would be required as we can ensure that the adapter follows the contract
-set by the interface.
+יתרון גדול עוד יותר לשיטת מימוש זו הוא שהקוד שלנו הוא יותר סקלבילי כעת. אם בעוד שנה נחליט שאנו רוצים להגר לסוג 
+מאגר נתונים אחר, נוכל פשוט לכתוב מתאם חדש אשר יישם את הממשק המקורי ויזריק אותו במקום, לא יהיה צורך בשכתוב קוד
+נוסף מעבר לכך מכיוון שאנו יכולים להיות בטוחים שהמתאם מממש את תנאי החוזה שהוגדרו ע"י הממשק.
