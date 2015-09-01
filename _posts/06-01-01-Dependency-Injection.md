@@ -3,13 +3,14 @@ title:  Dependency Injection
 anchor: dependency_injection
 ---
 
-# Dependency Injection {#dependency_injection_title}
+# Dependency injection -  הזרקת תלויות {#dependency_injection_title}
 
-From [Wikipedia](http://en.wikipedia.org/wiki/Dependency_injection):
+מובאה [ויקיפדיה](https://he.wikipedia.org/wiki/Dependency_injection):
 
-> Dependency injection is a software design pattern that allows the removal of hard-coded dependencies and makes it 
-> possible to change them, whether at run-time or compile-time.
+> הזרקת תלויות (באנגלית: dependency injection) היא תבנית עיצוב המאפשרת בחירה של רכיבי תוכנה בזמן 
+> ריצה (ולא בזמן ההידור). תבנית זו יכולה, לדוגמה, לשמש כדרך פשוטה לטעינה דינאמית של plug-ins או בחירה באובייקטי 
+> דמה (mock objects) בסביבות בדיקה, במקום להשתמש באובייקטים אמיתיים של סביבת הייצור. תבנית עיצוב זו מזריקה את האלמנט שתלויים בו 
+> (אובייקט או ערך, וכדומה) אל היעד שלו, בהתבסס על ידיעה של הצרכים של היעד.
 
-This quote makes the concept sound much more complicated than it actually is. Dependency Injection is providing a
-component with its dependencies either through constructor injection, method calls or the setting of properties. It is
-that simple.
+ציטוט זה גורם למונח להישמע מסובך יותר משהו באמת. הזרקת תלויות מאפשרת רכיב עם כל התלויות שלו באמצעות הזרקה לבנאי, 
+קריאה למתודות או השמת מאפיינים. זה עד כדי כך פשוט.

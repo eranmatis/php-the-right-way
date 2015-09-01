@@ -3,14 +3,14 @@ isChild: true
 anchor:  containers
 ---
 
-## Containers {#containers_title}
+## מיכלי הזרקת תלויות {#containers_title}
 
-The first thing you should understand about Dependency Injection Containers is that they are not the same thing as
-Dependency Injection. A container is a convenience utility that helps us implement Dependency Injection, however, they
-can be and often are misused to implement an anti-pattern, Service Location. Injecting a DI container as a Service
-Locator in to your classes arguably creates a harder dependency on the container than the dependency you are replacing.
-It also makes your code much less transparent and ultimately harder to test.
+הדבר הראשון שעלינו להבין הוא שיש שוני בין מיכלי הזרקת תלויות להזרקת תלויות.
+מיכל הזרקת תלויות הוא כלי המסייע לנו ליישם הזרקת תלויות באופן נוח, עם זאת, הם יכולים לעיתים - ובאופן שגוי - 
+לשמש כאנטי תבנית, שירות אינדקס/מיקום. הזרקה של מיכל הזרקת תלויות כשירות אינדקס/מיקום למחלקות שלנו עלול לגרום
+לתלות חזקה יותר במימוש הקיים מאשר בזה שהוחלף.
 
-Most modern frameworks have their own Dependency Injection Container that allows you to wire your dependencies together
-through configuration. What this means in practice is that you can write application code that is as clean and de-
-coupled as the framework it is built on.
+בנוסף, הדבר גורם לקוד שלנו להיות פחות שקוף ובסופו של דבר, קשה יותר לבדיקה.
+
+רוב המערכות המודרניות מכילות מימוש עצמאי למיכל הזרקת תלויות אשר מאפשר לנו לחווט את התלויות יחד באמצעות הגדרות.
+משמע שבפועל היכולת לכתוב קוד אפליקטיבי נקי ולא מצומד נמצאת ביחס ישיר למערכת שעל גביה אנו מפתחים.

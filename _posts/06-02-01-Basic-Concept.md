@@ -3,13 +3,13 @@ isChild: true
 anchor:  basic_concept
 ---
 
-## Basic Concept {#basic_concept_title}
+## הבנה בסיסית {#basic_concept_title}
 
-We can demonstrate the concept with a simple, yet naive example.
+ניתן להדגים את הנושא באמצעות דוגמא פשוטה ותמימה.
 
-Here we have a `Database` class that requires an adapter to speak to the database. We instantiate the adapter in the
-constructor and create a hard dependency. This makes testing difficult and means the `Database` class is very tightly
-coupled to the adapter.
+בדוגמא זו יש לנו מחלקת `Database` אשר עבורה נדרש מתאם אשר "מדבר" עם מאגר הנתונים. אנו יוצרים מופע של מתאם זה
+באמצעות בנאי ויוצרים בו תלות קשיחה. דבר זה הופך את מלאכת הבדיקה לקשה - משמע, מחלקת `Database` נמצאת בצימוד חזק
+למתאם.
 
 {% highlight php %}
 <?php
@@ -28,7 +28,7 @@ class Database
 class MysqlAdapter {}
 {% endhighlight %}
 
-This code can be refactored to use Dependency Injection and therefore loosen the dependency.
+קוד זה יכול לעבור התאמה לשימוש בהזרקת תלויות וכך להחליש את התלות.
 
 {% highlight php %}
 <?php
@@ -47,6 +47,6 @@ class Database
 class MysqlAdapter {}
 {% endhighlight %}
 
-Now we are giving the `Database` class its dependency rather than it creating it itself. We could even create a method
-that would accept an argument of the dependency and set it that way, or if the `$adapter` property was `public` we
-could set it directly.
+כעת אנו נותנים למחלקה `Database` את התלות שלה במקום לתת לה את האחריות על יצירתה בעצמה. אנו יכולים אפילו ליצור
+פונקציה אשר יודעת לקבל ארגומנט של התלות ולבצע השמה בדרך זו, או אם הרשאת ה-`$adapter` הייתה `public`, 
+ניתן לבצע השמה באופן ישיר.

@@ -3,15 +3,15 @@ title:  Databases
 anchor: databases
 ---
 
-# Databases {#databases_title}
+# מאגרי נתונים {#databases_title}
 
-Many times your PHP code will use a database to persist information. You have a few options to connect and interact
-with your database. The recommended option **until PHP 5.1.0** was to use native drivers such as [mysqli], [pgsql],
-[mssql], etc.
+לעיתים קרובות קוד ה-PHP שלך עושה שימוש במאגר נתונים לשימוש חוזר במידע. יש לך מספר אפשרויות להתחבר ולהתממשק
+עם מאגרי המידע. האפשרות המומלצת **עד גרסת PHP 5.1.0** הייתה שימוש במנהלי התקנים מקומיים כגון [mysqli], [pgsql],
+[mssql], וכו'.
 
-Native drivers are great if you are only using _one_ database in your application, but if, for example, you are using
-MySQL and a little bit of MSSQL, or you need to connect to an Oracle database, then you will not be able to use the
-same drivers. You'll need to learn a brand new API for each database &mdash; and that can get silly.
+מנהלי התקנים מקומיים הם מצויינים במידה ואתה משתמש רק במאגר נתונים _אחד_ באפליקציה. אבל אם לדוגמא, אתה משתמש
+ב-MySql ובמעט MSSQL, או שאתה צריך לגשת למאגר נתונים של Oracle, במצב זה לא תוכל לבצע שימוש חוזר באותם מנהלי התקנים.
+אתה תאלץ ללמוד API חדש עבור כל מאגר נתונים &mdash; וזה יכול להיות די טיפשי.
 
 
 [mysqli]: http://php.net/mysqli
