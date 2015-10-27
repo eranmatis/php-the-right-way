@@ -4,10 +4,9 @@ title:   Interacting with Databases
 anchor:  databases_interacting
 ---
 
-## Interacting with Databases {#databases_interacting_title}
-
-When developers first start to learn PHP, they often end up mixing their database interaction up with their
-presentation logic, using code that might look like this:
+## אינטראקציה עם מאגרי מידע {#databases_interacting_title}
+כאשר מפתחים מתחילים לראשונה ללמוד PHP, הם לעתים קרובות מערבבים את האינטראקציה של מסד הנתונים שלהם עם
+שכבת לוגיקת התצוגה, באמצעות קוד שעשוי להיראות כך:
 
 {% highlight php %}
 <ul>
@@ -19,13 +18,13 @@ foreach ($db->query('SELECT * FROM table') as $row) {
 </ul>
 {% endhighlight %}
 
-This is bad practice for all sorts of reasons, mainly that its hard to debug, hard to test, hard to read and it is
-going to output a lot of fields if you don't put a limit on there.
+זוהי פרקטיקה רעה מכל מיני סיבות, בעיקר כי קשה לאתר באגים, קשה לבדוק, הקוד קשה לקריאה אשר 
+עלול להציג שדות רבים, אם לא נשים שם מגבלה.
 
-While there are many other solutions to doing this - depending on if you prefer [OOP](/#object-oriented-programming) or
-[functional programming](/#functional-programming) - there must be some element of separation.
+כמובן שקיימים פתרונות נוספים - תלוי בהעדפתכם [OOP](/#object-oriented-programming) או
+[functional programming](/#functional-programming) - אך עדיין חובה שתהיה הפרדה.
 
-Consider the most basic step:
+שקלו את הצעד הבסיסי ביותר:
 
 {% highlight php %}
 <?php
@@ -38,11 +37,10 @@ foreach (getAllFoos($db) as $row) {
 }
 {% endhighlight %}
 
-That is a good start. Put those two items in two different files and you've got some clean separation.
+זוהי התחלה טובה. פצלו את שתי הפונקציות הנ"ל לשני קבצים נפרדים וקיבלתם הפרדה נקייה.
 
-Create a class to place that method in and you have a "Model". Create a simple `.php` file to put the presentation
-logic in and you have a "View", which is very nearly [MVC] - a common OOP architecture for most
-[frameworks](/#frameworks).
+צרו מחלקה אשר בה תמקמו את אותה הפונקצייה וקיבלת "מודל" (Model). צרו קובץ `.php` פשוט אשר יכיל את התצוגה הלוגית 
+קיבלת "תצוגה" (View), אשר  מקרבת אותנו מאוד ל-[MVC] - ארכיטקטורת OOP מקובלת וידועה [למערכות רבות](/#frameworks)..
 
 **foo.php**
 
@@ -50,15 +48,15 @@ logic in and you have a "View", which is very nearly [MVC] - a common OOP archit
 <?php
 $db = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8', 'username', 'password');
 
-// Make your model available
+// צרף את המודל
 include 'models/FooModel.php';
 
-// Create an instance
+// צור את המופע
 $fooModel = new FooModel($db);
 // Get the list of Foos
 $fooList = $fooModel->getAllFoos();
 
-// Show the view
+// צרף את התצוגה
 include 'views/foo-list.php';
 {% endhighlight %}
 
@@ -90,13 +88,12 @@ class FooModel
 <?php endforeach ?>
 {% endhighlight %}
 
-This is essentially the same as what most modern frameworks are doing, albeit a little more manual. You might not
-need to do all of that every time, but mixing together too much presentation logic and database interaction can be a
-real problem if you ever want to [unit-test](/#unit-testing) your application.
+למעשה, פעולה זו זהה למה שרוב המערכות אקיימות מבצעות, אם כי מעט יותר בצורה ידנית. יכול להיות שלא יהיה צורך 
+לבצע את הפרדה זו בכל פעם, אך עירוב של יותר מדי לוגיקות תצוגה עם גישות למאגר המידע יכול להוות בעיה אמיתית
+אם בעתיד נרצה לשלב [יחידה-בדיקה (unit-test)](/#unit-testing) באפליקצייה.
 
-[PHPBridge] have a great resource called [Creating a Data Class] which covers a very similar topic, and is great for
-developers just getting used to the concept of interacting with databases.
-
+באתר [PHPBridge] יש דף מצויין [Creating a Data Class] אשר מכסה נושא זהה כמעט לגמרי. מידע זה מומלץ למפתחים אשר
+רק מתחילים להתרגל לקונספט של אינטראקציה עם מאגרי מידע.
 
 [MVC]: http://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488
 [PHPBridge]: http://phpbridge.org/
