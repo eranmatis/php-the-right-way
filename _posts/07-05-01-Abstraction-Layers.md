@@ -4,17 +4,15 @@ title:   Abstraction Layers
 anchor:  databases_abstraction_layers
 ---
 
-## Abstraction Layers {#databases_abstraction_layers_title}
+## שכבות הפשטה {#databases_abstraction_layers_title}
 
-Many frameworks provide their own abstraction layer which may or may not sit on top of [PDO][1]. These will often
-emulate features for one database system that is missing from another by wrapping your queries in PHP methods, giving
-you actual database abstraction instead of just the connection abstraction that PDO provides. This will of course add a
-little overhead, but if you are building a portable application that needs to work with MySQL, PostgreSQL and SQLite
-then a little overhead will be worth it the sake of code cleanliness.
+מערכות רבות מממשות בעצמן שכבות הפשטה באופן התואם או שלא תואם ל-[PDO][1]. הן בדרך כלל יחקו
+תכונות עבור מערכת לאחרון נתונים אחת אשר תכונותיה חסרות ממערכת אחרת ע"י עטיפה של השאילתות במתודות PHP,
+וכך לספק הפשטת נתונים במקום רק הפשטת חיבור אשר מספק ה-PDO. כמובן שתהיה תקורה מסויימת, אבל אם אנו בונים אפליקציית פורטל
+אשר נדרשת לעבוד עם MySQL, PostgreSQL and SQLite אז במקרה זה, תקורה מסויימת קבילה על חשבון ניקיון הקוד.
 
-Some abstraction layers have been built using the [PSR-0][psr0] or [PSR-4][psr4] namespace standards so can be
-installed in any application you like:
-
+שכבות הפשטה מסויימות נבנו תוך שימוש בתקינת שמות מרחב (namespace) [PSR-0][psr0] או [PSR-4][psr4] ולכן ניתן להשתמש בהן
+ בכל אפליקציה שנרצה.
 * [Aura SQL][6]
 * [Doctrine2 DBAL][2]
 * [Propel][7]
