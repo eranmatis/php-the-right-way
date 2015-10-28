@@ -4,20 +4,19 @@ title:   MySQL Extension
 anchor:  mysql_extension
 ---
 
-## MySQL Extension {#mysql_extension_title}
+## תוסף MySQL {#mysql_extension_title}
 
-The [mysql] extension for PHP is no longer in active development, and is [officially deprecated as of PHP 5.5.0]
-[mysql_deprecated], meaning that it will be removed within the next few releases. If you are using any functions that
-start with `mysql_*` such as `mysql_connect()` and `mysql_query()` in your applications then these will simply not be
-available in later versions of PHP. This means you will be faced with a rewrite at some point down the line, so the
-best option is to replace mysql usage with [mysqli] or [PDO] in your applications within your own development schedules
-so you won't be rushed later on.
+תוסף ה-[mysql] ל-PHP אינו נמצא בפיתוח פעיל [ולא מומלץ לשימוש באופן רשמי (deprecated) החל מגרסה PHP 5.5.0]
+כאשר אנו מציינים [mysql_deprecated], אנו מתכוונים לכך שהתוסף יוסר בטווח של כמה גרסאות. אם אתם מבצעים שימוש באחר
+מהפונקציות המתחילות ב-`mysql_*` כגון: `mysql_connect()` ו- `mysql_query()` באפליקצייה שלכםת קחו בחשבון שהן פשוט 
+לא יהיו זמינות בגרסאות הבאות של PHP. המשמעות היא שאתם צפויים לבצע שכתובי קוד והאפשרות הטובה ביותר
+היא להחליף את השימוש ב-mysql עם [mysqli] או [PDO] באפליקצייה שלכם בתכנון מראש של שלבי הפיתוחת כך שלא תופתעו לאחר מכן. 
 
-**If you are starting from scratch then absolutely do not use the [mysql] extension: use the [MySQLi extension][mysqli],
-or use [PDO].**
+**אם אתם מתחילים פרויקט חדשת בשום פנים אל תשתמשו בתוסף ה-[mysql]: השתמשו ב-[MySQLi extension][mysqli],
+או ב-[PDO].**
 
-* [PHP: Choosing an API for MySQL][mysql_api]
-* [PDO Tutorial for MySQL Developers][pdo4mysql_devs]
+* [PHP: בחירת API עבור MySql][mysql_api]
+* [מדריך PDO עבור מפתחי MySQL][pdo4mysql_devs]
 
 
 [mysql]: http://php.net/mysql
