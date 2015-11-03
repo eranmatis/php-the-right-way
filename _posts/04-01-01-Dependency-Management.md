@@ -2,16 +2,16 @@
 anchor: dependency_management
 ---
 
-# Dependency Management {#dependency_management_title}
+# Dependency Management - ניהול תלויות {#dependency_management_title}
 
-There are a ton of PHP libraries, frameworks, and components to choose from. Your project will likely use 
-several of them — these are project dependencies. Until recently, PHP did not have a good way to manage
-these project dependencies. Even if you managed them manually, you still had to worry about autoloaders.
-That is no longer an issue.
+יש היצע רב מאוד של ספריות, מערכות ורכיבי PHP לבחירה. סביר להניח שגם בפרוייקט שלכם יעשה שימוש בחלק מהם.
+אלו הם תלויות פרויקט. עד לאחרונה, לשפת ה-PHP לא היה מנגנון טוב לניהול תלויות אלה. אפילו אם התלויות נוהלו
+באופן ידני, עדיין נשארה הבעיה של ה-autoloaders.
+זוהי כבר לא בעיה.
 
-Currently there are two major package management systems for PHP - [Composer] and [PEAR]. Composer is
-the main package manager to use for PHP, however for a long time PEAR used to fill that role. Knowing what
-PEAR is will be a good idea as you may still find references to it, even if you never use it.
+נכון להיום קיימות שתי מערכות עיקריות לניהול חבילות עבור PHP - [Composer] ו-[PEAR].
+מערכת ה-Composer היא המערכת העיקרית לשימוש עבור PHP, אך מערכת ה-PEAR שימשה בתפקיד זה זמן רב. הכרת מערכת
+ה-PEAR היא תמיד רעיון טוב מכיוון שעדיין ניתקל בהפניות אליה, גם אם לא נשתמש בה כלל.
 
 [Composer]: /#composer_and_packagist
 [PEAR]: /#pear
