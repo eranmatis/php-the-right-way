@@ -4,19 +4,20 @@ title:  Design Patterns
 sitemap: true
 ---
 
-# Design Patterns
+# תבניות עיצוב
 
-There are numerous ways to structure the code and project for your web application, and you can put as much or as little thought as you like into architecting. But it is usually a good idea to follow common patterns because it will
-make your code easier to manage and easier for others to understand.
+ישנן אינספור דרכים לעצב ולבנות את הקוד ואת הפרויקט לאפליקצייה שלכם ואתם יכולים להקדיש מחשבה מעטה או רבה בנושא
+ארכיטקטורת הפרויקטת אך בדרך כלל יישום של תבניות עיצוב שכיחות הוא רעיון טוב. בדרך זו יהיה קל יותר לנהל את הקוד
+וכמובן נוח יותר לאחרים להבין.
 
-* [Architectural pattern on Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
-* [Software design pattern on Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
-* [Collection of implementation examples](https://github.com/domnikl/DesignPatternsPHP)
+* [ארכיטקטורות תבניות ב-Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
+* [עיצוב תבניות תוכנה ב-Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
+* [אוסף של דוגמאות יישום](https://github.com/domnikl/DesignPatternsPHP)
 
-## Factory
+## Factory - מפעל
 
-One of the most commonly used design patterns is the factory pattern. In this pattern, a class simply creates the
-object you want to use. Consider the following example of the factory pattern:
+אחת מתבניות העיצוב השימושיות ביותר היא תבנית המפעל. בתבנית זו, מחלקה יוצרת את העצם בו אנו רוצים לעשות שימוש.
+קחו למשל את הדוגמא הבאה של תבנית המפעל:
 
 {% highlight php %}
 <?php
@@ -45,40 +46,40 @@ class AutomobileFactory
     }
 }
 
-// have the factory create the Automobile object
+// המפעל מייצר את הרכב
 $veyron = AutomobileFactory::create('Bugatti', 'Veyron');
 
 print_r($veyron->getMakeAndModel()); // outputs "Bugatti Veyron"
 {% endhighlight %}
 
-This code uses a factory to create the Automobile object. There are two possible benefits to building your code this
-way; the first is that if you need to change, rename, or replace the Automobile class later on you can do so and you
-will only have to modify the code in the factory, instead of every place in your project that uses the Automobile class.
-The second possible benefit is that if creating the object is a complicated job you can do all of the work in the
-factory, instead of repeating it every time you want to create a new instance.
+הקוד הנ"ל עושה שימוש במפעל על מנת לייצר עצם מסוג Automobile. יש שני יתרונות אפשריים מבניית הקוד בדרך זו;
+היתרון הראשון הוא שאם יש צורך לשכתב, לשנות שם או להחליף את מחלקת Automobile בשלב מאוחר יותר, ניתן לעשות זאת
+תוך שינוי של הקוד במפעל עצמו במקום בכל מקום בו יש שימוש במחלקה Automobile בפרויקט.
+היתרון השני האפשרי טמון ביכולת לריכוז העבודה המתבצעת ביצירת Automobile בתוך מחלקת המפעל במקום לחזור על הקוד 
+פעמים רבות בכל פעם בו אנו רוצים ליצור מופע חדש.
 
-Using the factory pattern isn't always necessary (or wise). The example code used here is so simple that a factory
-would simply be adding unneeded complexity. However if you are making a fairly large or complex project you may save
-yourself a lot of trouble down the road by using factories.
+השימוש בתבנית המפעל אינה תמיד הכרחית (או נבונה). דוגמת הקוד הבאה כה פשוטה עד שמפעל פשוט יוסיף מורכבות שאינה 
+נחוצה במקום זה. עם זאת, במידה ואתם יוצרים פרוייקטים גדולים ו/או מורכבים, אתם עשויים לחסוך לעצמכם צרות רבות בהמשך
+הדרך ע"י שימוש בתבניות מפעלים.
 
-* [Factory pattern on Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
+* [על תבנית המפעל ב-Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
 
-## Singleton
+## Singleton - סינגלטון (קלף-בודד)
 
-When designing web applications, it often makes sense conceptually and architecturally to allow access to one and only
-one instance of a particular class. The singleton pattern enables us to do this.
+כאשר מאפיינים אפליקציות web, לעיתים נרצה משיקולי ארכיטקטורה ועקרונות מנחים לאפשר גישה למחלקה מסויימת דרך 
+מופע אחד ואחד בלבד. תבנית הסינגלטון מאפשרת לנו לבצע בדיוק את זה.
 
 {% highlight php %}
 <?php
 class Singleton
 {
     /**
-     * @var Singleton The reference to *Singleton* instance of this class
+     * @var Singleton נקודת הייחוס למופע ה-*Singleton* של מחלקה זו
      */
     private static $instance;
     
     /**
-     * Returns the *Singleton* instance of this class.
+     * מחזיר את מופע ה-*Singleton* של מחלקה זו.
      *
      * @return Singleton The *Singleton* instance.
      */
@@ -92,16 +93,15 @@ class Singleton
     }
 
     /**
-     * Protected constructor to prevent creating a new instance of the
-     * *Singleton* via the `new` operator from outside of this class.
+     * בנאי מוגן המונע יצירת מופע חדש של ה-*Singleton*
+     *  באמצעות האופרטור `new` מחוץ למחלקה זו.
      */
     protected function __construct()
     {
     }
 
     /**
-     * Private clone method to prevent cloning of the instance of the
-     * *Singleton* instance.
+     * מתודת השכפול היא פרטית כדי למנוע שכפול המופע של ה-*Singleton*
      *
      * @return void
      */
@@ -110,8 +110,7 @@ class Singleton
     }
 
     /**
-     * Private unserialize method to prevent unserializing of the *Singleton*
-     * instance.
+     * מתודת  unserialize פרטית למניעת פעולת unserializing של מופע ה-*Singleton*
      *
      * @return void
      */
@@ -133,39 +132,37 @@ var_dump($anotherObj === Singleton::getInstance());      // bool(false)
 var_dump($anotherObj === SingletonChild::getInstance()); // bool(true)
 {% endhighlight %}
 
-The code above implements the singleton pattern using a [*static* variable](http://php.net/language.variables.scope#language.variables.scope.static) and the static creation method `getInstance()`.
-Note the following:
+הקוד הנ"ל מיישם את תבנית הסינגלטון באמצעות [משתנה *סטטי*](http://php.net/language.variables.scope#language.variables.scope.static) ופונקציית היצירה הסטטית `getInstance()`.
+אנא שימו לב לנקודות הבאות:
 
-* The constructor [`__construct()`](http://php.net/language.oop5.decon#object.construct) is declared as protected to
-prevent creating a new instance outside of the class via the `new` operator.
-* The magic method [`__clone()`](http://php.net/language.oop5.cloning#object.clone) is declared as private to prevent
-cloning of an instance of the class via the [`clone`](http://php.net/language.oop5.cloning) operator.
-* The magic method [`__wakeup()`](http://php.net/language.oop5.magic#object.wakeup) is declared as private to prevent
-unserializing of an instance of the class via the global function [`unserialize()`](http://php.net/function.unserialize)
-.
-* A new instance is created via [late static binding](http://php.net/language.oop5.late-static-bindings) in the static
-creation method `getInstance()` with the keyword `static`. This allows the subclassing of the class `Singleton` in the
-example.
+* הבנאי [`__construct()`](http://php.net/language.oop5.decon#object.construct) מוגדר כמוגן כדי למנוע יצירת מופע 
+חדש של מחלקה זו באמצעות האופרטור `new`.
+* פונקציית הקסם [`__clone()`](http://php.net/language.oop5.cloning#object.clone) מוגדרת כפרטית כדי למנוע את שכפול המופע
+באמצעות האופרטור [`clone`](http://php.net/language.oop5.cloning).
+* פונקציית הקסם [`__wakeup()`](http://php.net/language.oop5.magic#object.wakeup) מוגדרת כפרטית כדי למנוע unserializing
+ של המופע ממחלקה זו באמצעות הפונקצייה הגלובלית [`unserialize()`](http://php.net/function.unserialize).
+* מופע חדש נוצר באמצעות [צימוד סטטי מאוחר](http://php.net/language.oop5.late-static-bindings) בפונקציית היצירה הסטטית 
+`getInstance()` עם מילת המפתח `static`. דבר זה מאפשר יצירת רמה שניה למחלקה `Singleton` (הורשה) לפי הדוגמא.
 
-The singleton pattern is useful when we need to make sure we only have a single instance of a class for the entire
-request lifecycle in a web application. This typically occurs when we have global objects (such as a Configuration
-class) or a shared resource (such as an event queue).
+תבנית הסינגלטון שימושית במצבים בהם אנו רוצים לוודא שקיים רק מופע אחד של מחלקה מסויימת בכל מעגל החיים של 
+אפליקציית הרשת. מצבים כגון אלה בדרך כלל מופיעים כאשר יש לנו עצמים גלובליים (לדוגמא מחלקת קונפיגורצייה) או משאב
+שיתופי (לדוגמא, תור אירועים).
 
-You should be wary when using the singleton pattern, as by its very nature it introduces global state into your
-application, reducing testability. In most cases, dependency injection can (and should) be used in place of a singleton
-class. Using dependency injection means that we do not introduce unnecessary coupling into the design of our
-application, as the object using the shared or global resource requires no knowledge of a concretely defined class.
+צריך לנקוט משנה זהירות כאשר משתמשים בתבנית הסינגלטון, מפאת טבעה של תבנית זו המקנה לאפליקצייה התנהגות גלובלית
+ומקשה יותר על יכולת הבדיקות. ברוב המקרים, הזרקת תלויות יכולה (ועדיפה) להחליף את השימוש בתבנית הסינגלטון.
+שימוש בהזרקת תלויות חוסך לנו צימוד מיותר בעיצוב האפליקצייה. העצם אשר משתמש במשאב המשותף או הגלובלי אינו דורש
+כל ידע אודות מחלקה המוגדרת באופן ברור וייעודי לכך.
 
-* [Singleton pattern on Wikipedia](https://en.wikipedia.org/wiki/Singleton_pattern)
+* [תבנית הסינגלטון ב-Wikipedia](https://en.wikipedia.org/wiki/Singleton_pattern)
 
-## Strategy
+## Strategy - אסטרטגיה
 
-With the strategy pattern you encapsulate specific families of algorithms allowing the client class responsible for
-instantiating a particular algorithm to have no knowledge of the actual implementation. There are several variations on
-the strategy pattern, the simplest of which is outlined below:
+באמצעות תבנית האסטרטגיה ניתן לכמס משפחות אלגוריתמים מסויימות אשר מופעלות באמצעות מחלקה אשר אחראית
+על יצירת המופע של אלגוריתם מסוים שאין לו ידע על היישום בפועל. ישנן מספר וריאציות לתבנית האסטרטגיה, הפשוטה מהן
+מפורטת להלן:
 
-This first code snippet outlines a family of algorithms; you may want a serialized array, some JSON or maybe just an
-array of data:
+דוגמת הקוד הראשונה מציגה משפחת אלגוריתמים; ייתכן שנרצה לבצע פעולת סריאליזציה למערך, מעט JSON או אולי רק 
+מערך המכיל מידע:
 
 {% highlight php %}
 <?php
@@ -200,16 +197,16 @@ class ArrayOutput implements OutputInterface
 }
 {% endhighlight %}
 
-By encapsulating the above algorithms you are making it nice and clear in your code that other developers can easily
-add new output types without affecting the client code.
+פעולת הכימוס (encapsulation) של האלגוריתמים הנ"ל אנו מוודאים שמפתחים אחרים העושים שימוש בקוד יוכלו להוסיף
+מימושים חדשים מבלי להשפיע על קוד הלקוח הקיים.
 
-You will see how each concrete 'output' class implements an OutputInterface - this serves two purposes, primarily it
-provides a simple contract which must be obeyed by any new concrete implementations. Secondly by implementing a common
-interface you will see in the next section that you can now utilise [Type Hinting](http://php.net/language.oop5.typehinting) to ensure that the client which is utilising these behaviours is of the correct type in
-this case 'OutputInterface'.
+ניתן לראות כיצד כל מחלקת 'פלט' מיישמת ממשק 'OutputInterface'. - דבר זה משרת שתי מטרות, בראשונה הדבר מהווה חוזה פשוט
+וברור אשר חייב להיות ממומש ע"י כל מחקה אשר עושה שימוש בו. בשנית, וכפי שנראה בפרק הבא, השימוש בממשק משותף 
+מאפשר לנו גישה ל-[Type Hinting](http://php.net/language.oop5.typehinting) אשר נותן לנו כלי לבדיקה שאכן הלקוח אשר עושה שימוש
+בהתנהגות זו הוא מהסוג הנכון ובמקרה זה מהסוג 'OutputInterface'.
 
-The next snippet of code outlines how a calling client class might use one of these algorithms and even better set the
-behaviour required at runtime:
+דוגמת הקוד הבאה מדגישה כיצד מחלקת לקוח יכולה לעשות שימוש באלגוריתמים הללו ואפילו לשפר ולהתאים את התנהגותם
+בשעת ריצה:
 
 {% highlight php %}
 <?php
@@ -229,9 +226,9 @@ class SomeClient
 }
 {% endhighlight %}
 
-The calling client class above has a private property which must be set at runtime and be of type 'OutputInterface'
-once this property is set a call to loadOutput() will call the load() method in the concrete class of the output type
-that has been set.
+למחלקת הלקוח בדוגמה יש שדה פרטי אשר חייב להיות מושם בשעת ריצה לערך מהסוג 'OutputInterface'.
+לאחר השמת השדה, יוצאת קריאה לפונקציה loadOutput() אשר בתורה יוזמת קריאה לפונקציה load() במחלקת האלגוריתם שנבחרה לפי
+ערך הסוג שנבחר `$outputType`.
 
 {% highlight php %}
 <?php
@@ -247,28 +244,27 @@ $data = $client->loadOutput();
 
 {% endhighlight %}
 
-* [Strategy pattern on Wikipedia](http://en.wikipedia.org/wiki/Strategy_pattern)
+* [על תבנית האסטרטגיה ב-Wikipedia](http://en.wikipedia.org/wiki/Strategy_pattern)
 
-## Front Controller
+## Front Controller - בקר קדמי
 
-The front controller pattern is where you have a single entrance point for your web application (e.g. index.php) that
-handles all of the requests. This code is responsible for loading all of the dependencies, processing the request and
-sending the response to the browser. The front controller pattern can be beneficial because it encourages modular code
-and gives you a central place to hook in code that should be run for every request (such as input sanitization).
+תבנית הבקר הקדמי, או המפקח הקדמי מתארת מצב בו קיימת נקודת גישה אחת ויחידה לאפליקצייה שלנו (לדוגמא, index.php)
+אשר מטפלת בכל הבקשות. הקוד בתבנית אחראי על טעינת כל הרכיבים התלויים, עיבוד הבקשה ושליחת התשובה לדפדפן הלקוח.
+תבנית הבקר הקדמי יכולה להועיל לנו ולעודד שיטת קידוד מודולרית אשר מספקת לנו מיקום מרכזי לעגן בו את הקוד אשר
+אמור לרוץ בכל בקשה (לדוגמא, סניטציה של קוד).
 
-* [Front Controller pattern on Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
+* [על תבנית הבקר הקדמי ב-Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
 
-## Model-View-Controller
+## Model-View-Controller - מודל, תצוגה, בקר
 
-The model-view-controller (MVC) pattern and its relatives HMVC and MVVM lets you break up code into logical objects
-that serve very specific purposes. Models serve as a data access layer where data is fetched and returned in formats
-usable throughout your application. Controllers handle the request, process the data returned from models and load
-views to send in the response. And views are display templates (markup, xml, etc) that are sent in the response to the
-web browser.
+תבנית מודל, תצוגה, בקר (MVC) וקרובות המשפחה שלה HMVC ו- MVVM מאפשרות לנו לחלק את הקוד שלנו לעצמים לוגיים
+אשר משרתים מטרה ספציפית. המודל משמש שכבת גישה למידע אשר בה המידע הולך וחוזר בפורמטים השימושיים לאפליקצייה.
+הבקרים מטפלים בבקשות,מעבדים את המידע המושב מהמודלים וטוענים תצוגות לשליחה ללקוח.
+התצוגות הן תבניות (markup, xml, etc) אשר נשלחות לדפדפן הלקוח.
 
-MVC is the most common architectural pattern used in the popular [PHP frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
+תבנית ה-MVC היא התבנית השימושית ביותר [במערכות ה-PHP](https://github.com/codeguy/php-the-right-way/wiki/Frameworks) הנפוצות כיום 
 
-Learn more about MVC and its relatives:
+למדו עוד אודות תבנית ה-MVC ותבניות קשורות:
 
 * [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93View%E2%80%93Controller)
 * [HMVC](https://en.wikipedia.org/wiki/Hierarchical_model%E2%80%93view%E2%80%93controller)
